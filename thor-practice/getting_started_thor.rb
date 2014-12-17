@@ -1,3 +1,4 @@
+# filename: getting_started_thor.rb
 # to run this file:
 # ruby getting_started_thor.rb hi 'Jacinda'
 #   =>  Hi Jacinda!
@@ -16,4 +17,15 @@ class SayHi < Thor
   end
 end
 
-SayHi.start(ARGV)
+# SayHi.start(ARGV)
+
+
+class FileOp < Thor
+  desc 'output FILE_NAME', 'print out the contents of FILE_NAME'
+
+  def output(file_name)
+    puts File.read(file_name)
+  end
+end
+
+FileOp.start(ARGV)
